@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Add this to your existing styles.css or create a new file */
+    #quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.question {
+    margin-bottom: 15px;
+}
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+.home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <h1>Conversion Quiz</h1>
+        </div>
+        
+        <a href="home.html" class="home-button">Home</a>
+    </header>
+    <main>
+        <section id="quiz-container">
+            <h2>Test Your Conversion Skills!</h2>
+            <form id="quiz-form">
+                <div class="question">
+                    <label for="question1">1. Convert 1000 meters to kilometers:</label>
+                    <input type="text" id="question1" name="question1" required>
+                </div>
+                <div class="question">
+                    <label for="question2">2. Convert 60 Fahrenheit to Celsius:</label>
+                    <input type="text" id="question2" name="question2" required>
+                </div>
+                <div class="question">
+                    <label for="question3">3. Convert 10 miles to kilometers:</label>
+                    <input type="text" id="question3" name="question3" required>
+                </div>
+                <div class="question">
+                    <label for="question4">4. Convert 5 kilometers to miles:</label>
+                    <input type="text" id="question4" name="question4" required>
+                </div>
+                <div class="question">
+                    <label for="question5">5. Convert 500 grams to pounds:</label>
+                    <input type="text" id="question5" name="question5" required>
+                </div>
+                <div class="question">
+                    <label for="question6">6. Convert 2 liters to gallons:</label>
+                    <input type="text" id="question6" name="question6" required>
+                </div>
+                <div class="question">
+                    <label for="question7">7. Convert 100 degrees Celsius to Fahrenheit:</label>
+                    <input type="text" id="question7" name="question7" required>
+                </div>
+                <div class="question">
+                    <label for="question8">8. Convert 60 kilometers per hour to miles per hour:</label>
+                    <input type="text" id="question8" name="question8" required>
+                </div>
+                <div class="question">
+                    <label for="question9">9. Convert 1000 joules to calories:</label>
+                    <input type="text" id="question9" name="question9" required>
+                </div>
+                <div class="question">
+                    <label for="question10">10. Convert 50 square meters to square feet:</label>
+                    <input type="text" id="question10" name="question10" required>
+                </div>
+                
+                <button type="submit">Submit</button>
+            </form>
+            <div id="results" class="hidden">
+                <h3>Results:</h3>
+                <p id="score"></p>
+            </div>
+        </section>
+    </main>
+    <script>
+        document.getElementById('quiz-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const question1 = parseFloat(document.getElementById('question1').value);
+    const question2 = parseFloat(document.getElementById('question2').value);
+    const question3 = parseFloat(document.getElementById('question3').value);
+    const question4 = parseFloat(document.getElementById('question4').value);
+    const question5 = parseFloat(document.getElementById('question5').value);
+    const question6 = parseFloat(document.getElementById('question6').value);
+    const question7 = parseFloat(document.getElementById('question7').value);
+    const question8 = parseFloat(document.getElementById('question8').value);
+    const question9 = parseFloat(document.getElementById('question9').value);
+    const question10 = parseFloat(document.getElementById('question10').value); 
+
+        let score = 0;
+
+        if (Math.abs(question4 - 3.10686) < 0.01) score += 1;
+        if (Math.abs(question5 - 1.10231) < 0.01) score += 1;
+        if (Math.abs(question6 - 0.52834) < 0.01) score += 1;
+        if (Math.abs(question7 - 212) < 0.01) score += 1;
+        if (Math.abs(question8 - 37.2823) < 0.01) score += 1;
+        if (Math.abs(question9 - 239.006) < 0.01) score += 1;
+        if (Math.abs(question10 - 538.195) < 0.01) score += 1;
+
+        document.getElementById('results').classList.remove('hidden');
+        document.getElementById('score').textContent = `Your score: ${score}/10`;
+
+
+            
+});
+
+    </script>
+</body>
+</html>

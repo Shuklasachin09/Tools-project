@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Zone Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        select {
+            padding: 8px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Time Zone Converter</h1>
+        <form id="timezone-form">
+            <div>
+                <label for="timezone">Select Time Zone:</label>
+                <select id="timezone">
+                    <!-- Add time zone options here -->
+                </select>
+            </div>
+            <button type="button" class="button" onclick="showTime()">Show Current Time</button>
+        </form>
+        <div class="result">
+            Current Time: <span id="current-time">-</span>
+        </div>
+        <a href="home.html" class="home-button">Back to home</a>
+    </div>
+
+    <script>
+        function showTime() {
+            const timezone = document.getElementById('timezone').value;
+            const options = { timeZone: timezone, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const time = new Intl.DateTimeFormat([], options).format(new Date());
+            document.getElementById('current-time').textContent = time;
+        }
+        
+        // Populate time zones
+        const timezones = [
+            "America/New_York", "Europe/London", "Asia/Tokyo", "Australia/Sydney", 
+            "America/Los_Angeles", "Europe/Paris", "Asia/Kolkata", "Asia/Singapore"
+        ];
+
+        const timezoneSelect = document.getElementById('timezone');
+        timezones.forEach(zone => {
+            const option = document.createElement('option');
+            option.value = zone;
+            option.textContent = zone;
+            timezoneSelect.appendChild(option);
+        });
+    </script>
+</body>
+</html>

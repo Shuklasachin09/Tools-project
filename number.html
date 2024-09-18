@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Base Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        select, input {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: calc(100% - 22px);
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Number Base Converter</h1>
+        <form id="converter-form">
+            <div>
+                <label for="input-base">Input Base:</label>
+                <select id="input-base">
+                    <option value="2">Binary</option>
+                    <option value="10" selected>Decimal</option>
+                    <option value="16">Hexadecimal</option>
+                    <option value="8">Octal</option>
+                </select>
+            </div>
+            <div>
+                <label for="output-base">Output Base:</label>
+                <select id="output-base">
+                    <option value="2">Binary</option>
+                    <option value="10" selected>Decimal</option>
+                    <option value="16">Hexadecimal</option>
+                    <option value="8">Octal</option>
+                </select>
+            </div>
+            <div>
+                <label for="input-value">Input Value:</label>
+                <input type="text" id="input-value" placeholder="Enter value" required>
+            </div>
+            <button type="button" class="button" onclick="convertNumber()">Convert</button>
+        </form>
+        <div class="result">
+            Converted Value: <span id="converted-value">-</span>
+        </div>
+        
+        <a href="home.html" class="home-button">Back to home</a>
+    </div>
+
+    <script>
+        function convertNumber() {
+            const inputBase = parseInt(document.getElementById('input-base').value);
+            const outputBase = parseInt(document.getElementById('output-base').value);
+            const inputValue = document.getElementById('input-value').value.trim();
+            
+            let decimalValue;
+            
+            try {
+                // Convert input value to decimal
+                if (inputBase === 10) {
+                    decimalValue = parseInt(inputValue, 10);
+                } else if (inputBase === 2) {
+                    decimalValue = parseInt(inputValue, 2);
+                } else if (inputBase === 16) {
+                    decimalValue = parseInt(inputValue, 16);
+                } else if (inputBase === 8) {
+                    decimalValue = parseInt(inputValue, 8);
+                }
+                
+                if (isNaN(decimalValue)) throw new Error('Invalid input value');
+                
+                // Convert decimal to output base
+                let result;
+                if (outputBase === 10) {
+                    result = decimalValue.toString(10);
+                } else if (outputBase === 2) {
+                    result = decimalValue.toString(2);
+                } else if (outputBase === 16) {
+                    result = decimalValue.toString(16).toUpperCase();
+                } else if (outputBase === 8) {
+                    result = decimalValue.toString(8);
+                }
+                
+                document.getElementById('converted-value').textContent = result;
+            } catch (error) {
+                document.getElementById('converted-value').textContent = 'Error';
+                alert('Invalid input. Please check the value and try again.');
+            }
+        }
+    </script>
+</body>
+</html>

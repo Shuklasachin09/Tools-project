@@ -37,7 +37,7 @@
         }
 
         .link-box a {
-            display: block;
+            display: flex;
             padding: 50px;
             text-decoration: none;
             font-size: 20px;
@@ -54,6 +54,35 @@
             color: #777;
             font-size: 14px;
         }
+        
+footer {
+    background-color: #f3f0f05d;
+    color: rgb(10, 9, 9);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 10px;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
     </style>
 </head>
 <body>
@@ -81,14 +110,40 @@
         </div>
         <!--Link to number converter-->
         <div class="link-box">
-            <a href="number.html">Timezone</a>
+            <a href="number.html">Number Base Converter</a>
+        </div>
+         <!--Link to formula-->
+         <div class="link-box">
+            <a href="formula.html">Conversion Formulas</a>
+        </div>
+         <!--Link to quiz-->
+         <div class="link-box">
+            <a href="quiz.html">Play a Quiz</a>
         </div>
 
     </div>
 
+   
     <footer>
-        <p>&copy; 2024 Converter Project | All rights reserved.</p>
-    </footer>
+        <div class="footer-section">
+              <h4>About Us</h4>
+              <p>Our unit converter helps you easily convert various units of measurement.</p>
+            </div>
+            <div class="footer-section">
+              <h4>Contact Us</h4>
+              <p>Email: 2023pietadsachin051@poornima.org</p>
+              <p>Phone: 8955635229</p>
+            </div>
+            <div class="footer-section">
+              <h4>Location</h4>
+              <p>Jaipur, Rajasthan, India </p>
+            
+              <div class="footer-section">
+                <p>&copy; 2024 UnitConverter. All rights reserved.</p>
+                <p><a href="#disclaimer">Disclaimer</a> | <a href="#cookies">Cookie Policy</a></p>
+              </div>
+              </footer>
+
 
 </body>
 </html>

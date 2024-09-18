@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resistor Color Code Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        .resistor {
+            margin: 20px 0;
+        }
+        .resistor img {
+            width: 300px;
+            max-width: 100%;
+        }
+        .color-band {
+            display: inline-block;
+            width: 40px;
+            height: 100px;
+            border-radius: 5px;
+            margin: 0 2px;
+            vertical-align: middle;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resistor Color Code Calculator</h1>
+        <div class="resistor">
+            <img src="resistor.jpg" alt="Resistor Image">
+        </div>
+        <form id="resistor-form">
+            <div>
+                <label for="color1">First Band:</label>
+                <select id="color1">
+                    <option value="black" style="background-color: black; color: white;">Black</option>
+                    <option value="brown" style="background-color: brown; color: white;">Brown</option>
+                    <option value="red" style="background-color: red; color: white;">Red</option>
+                    <option value="orange" style="background-color: orange; color: black;">Orange</option>
+                    <option value="yellow" style="background-color: yellow; color: black;">Yellow</option>
+                    <option value="green" style="background-color: green; color: white;">Green</option>
+                    <option value="blue" style="background-color: blue; color: white;">Blue</option>
+                    <option value="violet" style="background-color: violet; color: white;">Violet</option>
+                    <option value="gray" style="background-color: gray; color: black;">Gray</option>
+                    <option value="white" style="background-color: white; color: black;">White</option>
+                </select>
+            </div>
+            <div>
+                <label for="color2">Second Band:</label>
+                <select id="color2">
+                    <!-- Same options as for color1 -->
+                    <option value="black" style="background-color: black; color: white;">Black</option>
+                    <option value="brown" style="background-color: brown; color: white;">Brown</option>
+                    <option value="red" style="background-color: red; color: white;">Red</option>
+                    <option value="orange" style="background-color: orange; color: black;">Orange</option>
+                    <option value="yellow" style="background-color: yellow; color: black;">Yellow</option>
+                    <option value="green" style="background-color: green; color: white;">Green</option>
+                    <option value="blue" style="background-color: blue; color: white;">Blue</option>
+                    <option value="violet" style="background-color: violet; color: white;">Violet</option>
+                    <option value="gray" style="background-color: gray; color: black;">Gray</option>
+                    <option value="white" style="background-color: white; color: black;">White</option>
+                </select>
+            </div>
+            <div>
+                <label for="color3">Third Band:</label>
+                <select id="color3">
+                    <!-- Same options as for color1 -->
+                    <option value="black" style="background-color: black; color: white;">Black</option>
+                    <option value="brown" style="background-color: brown; color: white;">Brown</option>
+                    <option value="red" style="background-color: red; color: white;">Red</option>
+                    <option value="orange" style="background-color: orange; color: black;">Orange</option>
+                    <option value="yellow" style="background-color: yellow; color: black;">Yellow</option>
+                    <option value="green" style="background-color: green; color: white;">Green</option>
+                    <option value="blue" style="background-color: blue; color: white;">Blue</option>
+                    <option value="violet" style="background-color: violet; color: white;">Violet</option>
+                    <option value="gray" style="background-color: gray; color: black;">Gray</option>
+                    <option value="white" style="background-color: white; color: black;">White</option>
+                </select>
+            </div>
+            <div>
+                <label for="color4">Fourth Band (Tolerance):</label>
+                <select id="color4">
+                    <option value="brown" style="background-color: brown; color: white;">Brown (±1%)</option>
+                    <option value="red" style="background-color: red; color: white;">Red (±2%)</option>
+                    <option value="green" style="background-color: green; color: white;">Green (±0.5%)</option>
+                    <option value="blue" style="background-color: blue; color: white;">Blue (±0.25%)</option>
+                    <option value="violet" style="background-color: violet; color: white;">Violet (±0.1%)</option>
+                    <option value="gray" style="background-color: gray; color: black;">Gray (±0.05%)</option>
+                    <option value="gold" style="background-color: gold; color: black;">Gold (±5%)</option>
+                    <option value="silver" style="background-color: silver; color: black;">Silver (±10%)</option>
+                    <option value="none" style="background-color: white; color: black;">None (±20%)</option>
+                </select>
+            </div>
+            <button type="button" class="button" onclick="calculateResistor()">Calculate</button>
+        </form>
+        <div class="result">
+            Resistor Value: <span id="resistor-value">-</span> Ohms
+        </div>
+        <a href="home.html" class="home-button">Back to Home</a>
+    </div>
+
+    <script>
+        function getColorValue(color) {
+            const colorCodes = {
+                black: 0, brown: 1, red: 2, orange: 3, yellow: 4,
+                green: 5, blue: 6, violet: 7, gray: 8, white: 9
+            };
+            return colorCodes[color];
+        }
+
+        function getMultiplier(color) {
+            const multipliers = {
+                black: 1, brown: 10, red: 100, orange: 1000, yellow: 10000,
+                green: 100000, blue: 1000000, violet: 10000000, gray: 100000000, white: 1000000000
+            };
+            return multipliers[color];
+        }
+
+        function calculateResistor() {
+            const color1 = document.getElementById('color1').value;
+            const color2 = document.getElementById('color2').value;
+            const color3 = document.getElementById('color3').value;
+            const color4 = document.getElementById('color4').value;
+
+            const digit1 = getColorValue(color1);
+            const digit2 = getColorValue(color2);
+            const multiplier = getMultiplier(color3);
+
+            const resistance = (digit1 * 10 + digit2) * multiplier;
+
+            document.getElementById('resistor-value').textContent = resistance.toLocaleString();
+        }
+    </script>
+</body>
+</html>
