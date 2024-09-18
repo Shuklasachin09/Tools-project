@@ -1,0 +1,302 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    background-color: #1D5D9B;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    background-color: #FFAF00;
+    border-radius: 0 0 8px 8px;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+.tab-content {
+    margin-top: 20px;
+}
+
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display: block;
+}
+
+section {
+    margin-top: 20px;
+}
+
+.converter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #1D5D9B;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #75C2F6;
+}
+
+#result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#theme {
+    background-color: #fff;
+
+}
+
+.theme1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+}
+
+.dark-mode .container {
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode header {
+    background-color: #444;
+}
+
+.dark-mode nav ul {
+    background-color: #444;
+}
+
+.dark-mode nav ul li a {
+    color: #f5f5f5;
+}
+
+.dark-mode .converter input,
+.dark-mode .converter select,
+.dark-mode .converter button {
+    background-color: #444;
+    color: #f5f5f5;
+    border: 1px solid #555;
+}
+
+.dark-mode button {
+    background-color: #666;
+}
+
+.dark-mode button:hover {
+    background-color: #777;
+}
+
+.dark-mode #theme img {
+    filter: invert(1);
+}
+
+.dark-mode .start img {
+    filter: invert(1);
+    filter: hue-rotate(180deg);
+}
+
+.start {
+    display: flex;
+    gap: 23px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 50%;
+    width: 10%;
+    gap: 100px;
+}
+
+.scale {
+    display: flex;
+    gap: 10px;
+}
+
+.scale img {
+    height: 5%;
+    width: 5%;
+}
+
+.thermo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.thermo img {
+    height: 3.5%;
+    width: 3.5%;
+}
+
+.area1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.area1 img {
+    height: 5%;
+    width: 5%;
+}
+
+.vol1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.vol1 img {
+    height: 5%;
+    width: 5%;
+}
+
+.weight1 {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.weight1 img {
+    height: 5%;
+    width: 5%;
+}
+
+/* Media Queries */
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .converter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: row;
+    }
+
+    .converter {
+        flex-direction: row;
+    }
+
+    input,
+    select,
+    button {
+        width: auto;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 10px;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.emptybox {
+    /*height: 30%;
+    width: 100%;*/
+    border: #1e1e1e;
+    padding: 130px;
+
+
+}
+

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Unit Converter</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="start">
+                <img class="logo" src="logo.jpg" alt="">
+                <h1>Unit Converter</h1>
+                <img class="logo" src="logo.jpg" alt="">
+            </div>
+            
+        </header>
+        <nav>
+            <ul>
+                <li class="navtext"><a href="#length" onclick="showTab('length')">Length</a></li>
+                <li class="navtext"><a href="#temperature" onclick="showTab('temperature')">Temperature</a></li>
+                <li class="navtext"><a href="#area" onclick="showTab('area')">Area</a></li>
+                <li class="navtext"><a href="#volume" onclick="showTab('volume')">Volume</a></li>
+                <li class="navtext"><a href="#weight" onclick="showTab('weight')">Weight</a></li>
+                <!-- Add more categories as needed -->
+            </ul>
+        </nav>
+       
+        <section id="length">
+           <div class="theme1">
+            <div class="scale">
+                <img src="scale.webp" alt="">
+                <h2>Length Converter</h2>
+            </div>
+            
+            <button id="theme"><img  src="button.svg" alt=""></button>
+           </div> 
+            <div class="converter">
+                <input type="number" id="fromValue" placeholder="Enter value">
+                <select id="fromUnit">
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>
+                    <option value="centimeter">Centimeter</option>
+                    <option value="millimeter">Millimeter</option>
+                    <option value="micrometer">Micrometer</option>
+                    <option value="mile">Mile</option>
+                    <option value="foot">Foot</option>
+                    <option value="inch">Inch</option>
+                </select>
+                <span>to</span>
+                <select id="toUnit">
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>
+                    <option value="centimeter">Centimeter</option>
+                    <option value="millimeter">Millimeter</option>
+                    <option value="micrometer">Micrometer</option>
+                    <option value="mile">Mile</option>
+                    <option value="foot">Foot</option>
+                    <option value="inch">Inch</option>
+                </select>
+                <button onclick="convertLength()">Convert</button>
+                <p id="lengthResult">Result: </p>
+            </div>
+        </section>
+
+        <section id="temperature" class="tab">
+            <div class="thermo">
+                <img src="thermo.jpg" alt="">
+                <h2>Temperature Converter</h2>
+            </div>
+            
+            <div class="converter">
+                <input type="number" id="temperatureFromValue" placeholder="Enter value">
+                <select id="temperatureFromUnit">
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                    <!-- Add more units -->
+                </select>
+                <span>to</span>
+                <select id="temperatureToUnit">
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                    <!-- Add more units -->
+                </select>
+                <button onclick="convertTemperature()">Convert</button>
+                <p id="temperatureResult">Result: </p>
+            </div>
+        </section>
+
+        <section id="area" class="tab">
+            <div class="area1">
+                <img src="area.avif" alt="">
+                <h2>Area Converter</h2>
+            </div>
+            
+            <div class="converter">
+                <input type="number" id="areaFromValue" placeholder="Enter value">
+                <select id="areaFromUnit">
+                    <option value="squareMeter">Square Meter</option>
+                    <option value="squareKilometer">Square Kilometer</option>
+                    <option value="squareFoot">Square Foot</option>
+                    <option value="squareInch">Square Inch</option>
+                    <option value="acre">Acre</option>
+                    <option value="hectare">Hectare</option>
+                    <!-- Add more units -->
+                </select>
+                <span>to</span>
+                <select id="areaToUnit">
+                    <option value="squareMeter">Square Meter</option>
+                    <option value="squareKilometer">Square Kilometer</option>
+                    <option value="squareFoot">Square Foot</option>
+                    <option value="squareInch">Square Inch</option>
+                    <option value="acre">Acre</option>
+                    <option value="hectare">Hectare</option>
+                    <!-- Add more units -->
+                </select>
+                <button onclick="convertArea()">Convert</button>
+                <p id="areaResult">Result: </p>
+            </div>
+        </section>
+
+        <section id="volume" class="tab">
+            <div class="vol1">
+                <img src="vol.jpg" alt="">
+                <h2>Volume Converter</h2>
+            </div>
+            
+            <div class="converter">
+                <input type="number" id="volumeFromValue" placeholder="Enter value">
+                <select id="volumeFromUnit">
+                    <option value="cubicMeter">Cubic Meter</option>
+                    <option value="cubicCentimeter">Cubic Centimeter</option>
+                    <option value="cubicMillimeter">Cubic Millimeter</option>
+                    <option value="litre">Litre</option>
+                    <option value="millilitre">Millilitre</option>
+                    <option value="gallon">Gallon</option>
+                    <!-- Add more units -->
+                </select>
+                <span>to</span>
+                <select id="volumeToUnit">
+                    <option value="cubicMeter">Cubic Meter</option>
+                    <option value="cubicCentimeter">Cubic Centimeter</option>
+                    <option value="cubicMillimeter">Cubic Millimeter</option>
+                    <option value="litre">Litre</option>
+                    <option value="millilitre">Millilitre</option>
+                    <option value="gallon">Gallon</option>
+                    <!-- Add more units -->
+                </select>
+                <button onclick="convertVolume()">Convert</button>
+                <p id="volumeResult">Result: </p>
+            </div>
+        </section>
+
+        <section id="weight" class="tab">
+            <div class="weight1">
+                <img src="weighmachine.jpg" alt="">
+                <h2>Weight Converter</h2>
+            </div>
+           
+            <div class="converter">
+                <input type="number" id="weightFromValue" placeholder="Enter value">
+                <select id="weightFromUnit">
+                    <option value="kilogram">Kilogram</option>
+                    <option value="gram">Gram</option>
+                    <option value="milligram">Milligram</option>
+                    <option value="pound">Pound</option>
+                    <option value="ton">Ton</option>
+                    <option value="ounces">Ounces</option>
+                    <!-- Add more units -->
+                </select>
+                <span>to</span>
+                <select id="weightToUnit">
+                    <option value="kilogram">Kilogram</option>
+                    <option value="gram">Gram</option>
+                    <option value="milligram">Milligram</option>
+                    <option value="pound">Pound</option>
+                    <option value="ton">Ton</option>
+                    <option value="ounces">Ounces</option>
+
+                    <!-- Add more units -->
+                </select>
+                <button onclick="convertWeight()">Convert</button>
+                <p id="weightResult">Result: </p>
+            </div>
+        </section>
+
+
+        <!-- Add  sections for other conversions -->
+    </div>
+    <script src="script.js"></script>
+
+    <div class="emptybox">
+
+    
+    </div>
+
+    <footer>
+        <div class="footer-section">
+              <h4>About Us</h4>
+              <p>Our unit converter helps you easily convert various units of measurement.</p>
+            </div>
+            <div class="footer-section">
+              <h4>Contact Us</h4>
+              <p>Email: 2023pietadsachin051@poornima.org</p>
+              <p>Phone: 8955635229</p>
+            </div>
+            <div class="footer-section">
+              <h4>Location</h4>
+              <p>Jaipur, Rajasthan, India </p>
+            
+              <div class="footer-section">
+                <p>&copy; 2024 UnitConverter. All rights reserved.</p>
+                <p><a href="#disclaimer">Disclaimer</a> | <a href="#cookies">Cookie Policy</a></p>
+              </div>
+              </footer>
+
+
+
+
+</body>
+
+</html>
+
