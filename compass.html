@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compass</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .compass-container {
+            position: relative;
+            margin: 50px auto;
+            width: 200px;
+            height: 200px;
+            border: 5px solid #333;
+            border-radius: 50%;
+            background: url('compass-bg.png') no-repeat center;
+            background-size: contain;
+        }
+        .compass-needle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 6px;
+            height: 100px;
+            background: red;
+            transform-origin: 50% 100%;
+        }
+       
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #0056b3;
+        }
+    
+    </style>
+
+
+</head>
+<body>
+    <h1>Compass</h1>
+    <p>Move your device to see the compass in action.</p>
+    <div class="compass-container">
+        <div class="compass-needle" id="needle"></div>
+    </div>
+    <a href="index.html" class="home-button">Back to Home</a>
+
+    <script>
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', function(event) {
+                let compassHeading = event.alpha; // Get the direction in degrees
+                let needle = document.getElementById('needle');
+                needle.style.transform = `rotate(${compassHeading}deg)`; // Rotate the needle
+            }, true);
+        } else {
+            alert('Your device does not support orientation detection.');
+        }
+    </script>
+</body>
+</html>
