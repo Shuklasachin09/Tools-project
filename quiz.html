@@ -13,6 +13,7 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
+    background:rgba(0,0,0,0.9);
 }
 
 .question {
@@ -57,18 +58,38 @@ button:hover {
         .home-button:hover {
             background-color: #0056b3;
         }
+        .bgimg{
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            background-position: center;
+            background-size: cover;   
+            z-index: 0;
+            
+            }
+            .cover{
+                position:relative;
+                color: white;
+                font-size: large;
+                font-weight: bolder;
+                }
+              
 
 
     </style>
 
 </head>
 <body>
+    <img class="bgimg"  src="img44.jpg" alt="">
+    <div class="cover">
+
+    
     <header>
         <div class="heading">
             <h1>Conversion Quiz</h1>
         </div>
         
-        <a href="home.html" class="home-button">Home</a>
+        <a href="index1.html" class="home-button">Home</a>
     </header>
     <main>
         <section id="quiz-container">
@@ -123,6 +144,7 @@ button:hover {
             </div>
         </section>
     </main>
+</div>
     <script>
         document.getElementById('quiz-form').addEventListener('submit', function(event) {
     event.preventDefault();

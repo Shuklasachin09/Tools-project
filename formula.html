@@ -11,13 +11,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+   font-weight: bolder;
+    color:black;
 }
 
 header {
-    background-color: #007BFF;
+    background-color: rgba(0,0,0,0.7);
     color: white;
     text-align: center;
     padding: 10px 0;
+   
 }
 
 header h1 {
@@ -39,6 +42,7 @@ header .button:hover {
 
 main {
     padding: 20px;
+   
 }
 
 #formulas-container {
@@ -47,6 +51,7 @@ main {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 10px;
+   
 }
 
 .formula-category {
@@ -92,13 +97,30 @@ footer {
         .home-button:hover {
             background-color: #0056b3;
         }
+        .bgimg{
+          position:fixed;
+         height: 100vh;
+          width: 100vw;
+          background-size: cover;
+           opacity: 0.9;
+           
+        }
+        .cover{
+            position: relative;
+        }
+        
+    
 
     </style>
 </head>
 <body>
+   <img class="bgimg" src="img22.jpg" alt="">
+    <div class="cover">
+
+   
     <header>
         <h1>Conversion Formulas</h1>
-        <a href="home.html" class="home-button">Home</a>
+        <a href="index1.html" class="home-button">Home</a>
     </header>
     <main>
         <section id="formulas-container">
@@ -172,5 +194,6 @@ footer {
     <footer>
         <p>&copy; 2024 Unit Converter Project</p>
     </footer>
+</div>
 </body>
 </html>
